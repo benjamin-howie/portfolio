@@ -1,0 +1,10 @@
+.hamburger {
+  &.is-active &-inner,
+  &.is-active &-inner::before,
+  &.is-active &-inner::after,
+  &-inner,
+  &-inner::before,
+  &-inner::after {
+    background-color: $white;
+  }
+}

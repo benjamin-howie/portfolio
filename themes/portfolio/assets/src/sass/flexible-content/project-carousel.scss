@@ -1,0 +1,51 @@
+.project-carousel {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr minmax(0, 0.5fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-areas:
+      'title title'
+      'body-copy body-copy'
+      'featured-project featured-project'
+      'project-carousel-slider project-carousel-slider'
+      'link link';
+
+    @include responsiveMin($tablet-m) {
+      grid-template-areas:
+        'title link'
+        'body-copy body-copy'
+        'featured-project project-carousel-slider';
+    }
+
+    .heading {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+    .body-copy {
+      grid-area: body-copy;
+      max-width: $article-width;
+    }
+    .project-link {
+      justify-self: end;
+      grid-area: link;
+    }
+    .featured-project {
+      grid-area: featured-project;
+    }
+    .project-carousel-slider {
+      grid-area: project-carousel-slider;
+      overflow: hidden;
+
+      .project-card {
+        &-excerpt {
+          font-size: 1.2rem;
+
+          @include responsiveMin($tablet-m) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

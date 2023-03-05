@@ -1,0 +1,92 @@
+$all-colours: (
+  yellow: $yellow,
+  orange: $orange,
+  pink: $pink,
+  purple: $purple,
+  blue: $blue,
+  black: $black,
+  white: $white,
+  dark-grey: $dark-grey,
+  grey: $grey,
+);
+// Define a background class and a text class for all colours.
+
+@each $colourName, $colourValue in $all-colours {
+  #{'.text-' + $colourName} {
+    color: $colourValue;
+  }
+
+  #{'.bg-' + $colourName} {
+    background-color: $colourValue;
+    @if $colourValue == $white {
+      color: $dark-grey;
+      a {
+        color: $dark-grey;
+      }
+    } @else {
+      color: $white;
+      a {
+        color: $white;
+      }
+      .btn,
+      a.btn,
+      button.btn {
+        &.transparent {
+          &:hover {
+            background: rgba($white, 0.2);
+          }
+        }
+      }
+      svg,
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.text-gradient {
+  background: $gradient-alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.colour-shift {
+  background-color: $purple;
+  color: $white;
+  transition: all 0.4s ease-in-out;
+  svg,
+  svg path,
+  svg {
+    fill: $white;
+    transition: fill 0.2s ease-in-out;
+  }
+  &.in-view {
+    background-color: $pink;
+  }
+  &-even {
+    // The effect here is to have a different background for every other instance of the .colour-shift class, regardless of its place in the DOM. :nth-child will not work because it is affected by surrounding children. :nth-of-type will not work because it is based off of the HTML <tag>, not the .class
+
+    //Please refer to the colour-shift.js file to see where this class is being added.
+    &.in-view {
+      background-color: $blue;
+    }
+  }
+  a {
+    color: $white;
+    &:hover {
+      svg,
+      svg path {
+        fill: $dark-grey;
+      }
+    }
+  }
+  .btn,
+  a.btn,
+  button.btn {
+    &.transparent {
+      &:hover {
+        background: rgba($white, 0.2);
+      }
+    }
+  }
+}

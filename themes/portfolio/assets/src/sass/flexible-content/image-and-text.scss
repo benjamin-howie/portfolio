@@ -1,0 +1,40 @@
+.image-and-text {
+  &-wrapper {
+    display: flex;
+    gap: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    @include responsiveMin($tablet-m) {
+      flex-direction: row;
+      &.image-right {
+        flex-direction: row-reverse;
+      }
+      & > * {
+        flex: 50%;
+      }
+    }
+    .image {
+      img {
+        height: 100%;
+        min-height: 35rem;
+        object-fit: cover;
+        object-position: center;
+      }
+      & + .content {
+        text-align: left;
+      }
+    }
+    .content {
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+      max-width: $article-width;
+      .sub-heading {
+        font-weight: 400;
+      }
+    }
+    .btn {
+      margin-top: 1.6rem;
+    }
+  }
+}

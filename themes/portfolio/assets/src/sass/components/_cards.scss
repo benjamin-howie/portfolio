@@ -1,0 +1,98 @@
+.featured-project-card {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'featured-image featured-image'
+    'featured-header featured-header'
+    'featured-excerpt featured-excerpt'
+    'featured-link featured-link';
+
+  @include responsiveMin($tablet-m) {
+    grid-template-areas:
+      'featured-image featured-header'
+      'featured-image featured-header'
+      'featured-excerpt featured-excerpt'
+      'featured-link featured-link';
+  }
+  &-header {
+    grid-area: featured-header;
+    .badge-heading {
+      margin-bottom: 1rem;
+    }
+  }
+  &-title {
+    @include responsiveMin($tablet-m) {
+      margin: 0;
+    }
+  }
+  &-link {
+    grid-area: featured-link;
+    display: block;
+    margin-top: 3.2rem;
+  }
+  &-technologies {
+    svg {
+      max-height: 15px;
+      max-width: 15px;
+      fill: $pink;
+      @include responsiveMin($tablet-m) {
+        max-height: 25px;
+        max-width: 25px;
+      }
+    }
+  }
+
+  &-image {
+    grid-area: featured-image;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-excerpt {
+    grid-area: featured-excerpt;
+  }
+}
+
+.project-card {
+  text-decoration: none;
+  height: 100%;
+  overflow: hidden;
+  &:hover {
+    .project-card-image img {
+      transform: scale(1.2);
+    }
+  }
+  &-technologies {
+    svg {
+      max-height: 15px;
+      max-width: 15px;
+      fill: $pink;
+      @include responsiveMin($tablet-m) {
+        max-height: 25px;
+        max-width: 25px;
+      }
+    }
+  }
+  &-image {
+    overflow: hidden;
+    img {
+      transition: transform 0.3s;
+    }
+  }
+  &-header,
+  &-excerpt {
+    padding: 0 1rem;
+  }
+  &-header,
+  &-image {
+    margin-bottom: 1rem;
+  }
+  &-title {
+    margin: 0;
+  }
+  &-excerpt {
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,35 @@
+.connect-banner {
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    justify-items: center;
+    align-items: center;
+  }
+  &-heading {
+    text-transform: capitalize;
+  }
+  &-heading,
+  &-body-copy {
+    flex: 100%;
+    text-align: center;
+  }
+  &-link.btn,
+  &-link {
+    flex-basis: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    @include responsiveMin($tablet-m) {
+      flex-grow: 0;
+      flex-basis: 30%;
+    }
+  }
+
+  svg {
+    max-height: 530px;
+    max-width: 50px;
+    height: 100%;
+    width: 100%;
+  }
+}

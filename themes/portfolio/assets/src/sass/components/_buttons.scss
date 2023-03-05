@@ -1,0 +1,84 @@
+// Btn Variables
+$border-size: 0.3rem;
+// Wrappers
+
+.btn-wrapper {
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+}
+.btn,
+a.btn,
+button.btn {
+  position: relative;
+  display: inline-block;
+  font-family: $font-primary;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  text-transform: uppercase;
+  color: currentColor;
+  background: $white;
+  transition: all 0.3s;
+  width: 100%;
+  text-align: center;
+  @include responsiveMin($tablet-m) {
+    width: auto;
+    text-align: left;
+  }
+
+  &:hover {
+    background: $dark-grey;
+    color: $white;
+  }
+
+  &.rounded {
+    border-radius: 0.5rem;
+    border: 2px solid currentColor;
+  }
+  &.transparent {
+    background: transparent;
+    &:hover {
+      background: $dark-grey;
+      color: $white;
+    }
+  }
+
+  &.bordered {
+    background: $white;
+    background-clip: padding-box;
+    border: $border-size solid transparent;
+    &:hover {
+      color: $dark-grey;
+      &:before {
+        left: -28%;
+        animation-name: rotate;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      height: calc(250% + ($border-size * 2));
+      width: calc(100% + ($border-size * 2));
+      top: -50%;
+      left: 0;
+      transition: left 0.5s;
+      margin: -$border-size;
+      background: $gradient;
+      z-index: -1;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,46 @@
+// Fonts
+
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+// Colours
+
+// $yellow: #ffbe0b;
+// $orange: #fb5607;
+// $pink: #ff006e;
+// $purple: #8338ec;
+// $blue: #3a86ff;
+// $black: #000000;
+// $white: #ffffff;
+// $dark-grey: #1f1432;
+
+$yellow: #ffff0d;
+$orange: #fba107;
+$pink: #ff0084;
+$purple: #8437ef;
+$blue: #3a85ff;
+$black: #000000;
+// $white: #ffffff;
+$white: #e8e8eb;
+$off-white: rgba($white, 0.8);
+$dark-grey: #1f1432;
+$grey: #8a8a8a;
+$gradient: linear-gradient(45deg, $purple, $pink, $orange);
+$gradient-alternate: linear-gradient(90deg, $orange, $purple, $pink);
+
+// Spacing
+
+$standard-spacing: 4.5rem;
+$big-spacing: 3.2rem;
+$default-width: 125rem;
+$article-width: 90rem;
+$nav-bar-height: 7rem;
+
+// Devices
+
+$phone: 320px;
+$phone-l: 480px;
+$tablet-s: 500px;
+$tablet-m: 640px;
+$tablet-l: 768px;
+$desktop: 1200px;

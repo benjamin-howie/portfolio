@@ -1,0 +1,14 @@
+.footer {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  &-menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    ul {
+      display: grid;
+      gap: 1.6rem;
+      list-style: none;
+    }
+  }
+}

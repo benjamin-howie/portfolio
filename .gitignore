@@ -1,0 +1,13 @@
+languages/
+update/
+debug.log
+*_Resources/
+*cache
+*node_modules/
+*uploads/
+*/package.json
+*.DS_Store
+wflogs/
+
+!plugins/wordfence/languages
+!.gitignore

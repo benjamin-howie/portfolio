@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: 50%;
+  @include responsiveMin($tablet-m) {
+    font-size: 62.5%; // Easier to work with rem units: 1rem = 10px on most default browser settings
+  }
+}
+.skip-to-main-content {
+  position: absolute;
+  transform: translateX(-100%);
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  padding: 8px 1.6rem;
+  background-color: $pink;
+  color: $white;
+  transition: 0.2s ease-in-out;
+  &:focus {
+    transform: translateX(0);
+  }
+}
+body {
+  font-size: 1.6rem;
+  color: $dark-grey;
+  background-color: $white;
+  margin: 0;
+  font-family: $font-secondary;
+}
+main {
+  padding-top: $nav-bar-height;
+  min-height: 100vh;
+  display: grid;
+}
+
+#main-content {
+  scroll-margin-top: calc($nav-bar-height + 2rem);
+}
+a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: $dark-grey;
+}
+p {
+  font-weight: 300;
+}
+
+ul,
+ol {
+  padding-left: 1.6rem;
+  list-style: disc;
+  margin: 0;
+}
+
+// Spacing
+
+.space-below {
+  padding-bottom: $standard-spacing;
+}
+.default-width {
+  @include contentWidth($default-width);
+}
+.article-width {
+  @include contentWidth($article-width);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+figure {
+  margin: 0;
+}
+
+section {
+  overflow: hidden;
+}

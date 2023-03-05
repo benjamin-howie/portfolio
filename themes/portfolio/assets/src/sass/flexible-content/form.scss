@@ -1,0 +1,14 @@
+// This includes some ninja form ovverides.
+
+.form {
+  .nf-form-content {
+    max-width: 100%;
+  }
+  address {
+    margin-bottom: 3.2rem;
+  }
+
+  input[type='submit'] {
+    cursor: pointer;
+  }
+}
