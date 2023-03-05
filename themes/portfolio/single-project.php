@@ -19,7 +19,7 @@ $github_link = get_field('github_link');
     <?php get_template_part("templates/flexible-content"); ?>
     <?php get_template_part("parts/media-grid"); ?>
     <?php get_template_part("parts/connect-banner", '', array(
-      'heading' => 'See ' . the_title() . ' in action',
+      'heading' => 'See ' . get_the_title() . ' in action',
       'primary_link' => $demo_link,
       'secondary_link' => $live_link,
       'github_link' => $github_link
