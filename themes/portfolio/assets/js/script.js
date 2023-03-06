@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
   let options = {
     root: null,
     rootMargin: '0px',
-    threshold: [0.1, 0.2, 1.0],
+    threshold: [0.2, 1.0],
   };
 
   let callback = (entries, observer) => {

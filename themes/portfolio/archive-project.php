@@ -29,7 +29,7 @@ $terms = get_terms('project_type');
   
   ?>
     <section id="main-content" class="mb-2">
-      <div class="default-width">"
+      <div class="default-width">
         <h2><?= $term->name ?></h2>
         <p class="mb-3"><?= $term->description ?></p>
         <div class="static-grid">
