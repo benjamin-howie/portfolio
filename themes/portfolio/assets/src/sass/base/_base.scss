@@ -6,7 +6,7 @@
 
 :root {
   scroll-behavior: smooth;
-  font-size: max(50%, 12px);
+  font-size: 55%;
   @include responsiveMin($tablet-m) {
     font-size: 62.5%; // Easier to work with rem units: 1rem = 10px on most default browser settings
   }

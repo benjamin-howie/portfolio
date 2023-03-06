@@ -100,7 +100,8 @@
   position: relative;
   background: rgba($dark-grey, 0.7);
   color: $white;
-  margin-bottom: $standard-spacing;
+  padding-bottom: $standard-spacing;
+  margin-bottom: 2rem;
   svg {
     fill: $white;
     max-height: 30px;

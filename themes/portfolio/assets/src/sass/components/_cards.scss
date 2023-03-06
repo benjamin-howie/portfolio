@@ -33,11 +33,9 @@
   }
   &-technologies {
     svg {
+      max-height: 25px;
+      max-width: 25px;
       fill: $pink;
-      @include responsiveMin($tablet-m) {
-        max-height: 25px;
-        max-width: 25px;
-      }
     }
   }
 
