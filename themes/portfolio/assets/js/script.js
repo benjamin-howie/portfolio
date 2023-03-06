@@ -4,13 +4,13 @@ jQuery(document).ready(function ($) {
   let options = {
     root: null,
     rootMargin: '0px',
-    threshold: [0.1, 0.75, 1.0],
+    threshold: [0.1, 0.2, 1.0],
   };
 
   let callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        if (entry.intersectionRatio >= 0.1) {
+        if (entry.intersectionRatio >= 0.2) {
           entry.target.classList.add('in-view');
         }
       } else {

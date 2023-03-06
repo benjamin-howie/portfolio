@@ -16,24 +16,17 @@ gulp.task('minify-css', () => {
 
 // Parses SASS to CSS
 gulp.task('sass', function () {
-  return (
-    gulp
-      .src('assets/src/sass/style.scss')
-      // .pipe(
-      //   sass({
-      //     includePaths: ['node_modules/@scope'],
-      //   })
-      // )
-      .pipe(sourcemaps.init())
-      .pipe(
-        sass({
-          includePaths: ['node_modules'],
-        })
-      )
-      .pipe(rename('style.css'))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('assets/css'))
-  );
+  return gulp
+    .src('assets/src/sass/style.scss')
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass({
+        includePaths: ['node_modules'],
+      })
+    )
+    .pipe(rename('style.css'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('assets/css'));
 });
 
 // Minifies JS
