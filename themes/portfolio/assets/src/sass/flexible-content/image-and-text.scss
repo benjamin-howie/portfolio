@@ -17,10 +17,6 @@
       display: flex;
 
       img {
-        width: 100%;
-        @include responsiveMin($tablet-m) {
-          min-height: 35rem;
-        }
         object-fit: cover;
         object-position: center;
       }
