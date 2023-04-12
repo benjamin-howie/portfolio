@@ -5,6 +5,8 @@ let rename = require('gulp-rename');
 let minify = require('gulp-minify');
 let concat = require('gulp-concat');
 let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('autoprefixer');
+let postcss = require('gulp-postcss');
 
 // Minifies the CSS
 gulp.task('minify-css', () => {
@@ -38,6 +40,15 @@ gulp.task('minify-js', () => {
     .pipe(gulp.dest('assets/js/'));
 });
 
+gulp.task('autoprefixer', () => {
+  return gulp
+    .src('assets/css/style.css')
+    .pipe(sourcemaps.init())
+    .pipe(postcss([autoprefixer('last 99 versions')]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('assets/css'));
+});
+
 // Watches the files and automatically updates them when save is clicked
 gulp.task('watch', () => {
   gulp.watch(['assets/src/sass/**/*.scss'], gulp.series(['sass']));
@@ -48,4 +59,7 @@ gulp.task('watch', () => {
 gulp.task('dev', gulp.series(['sass', 'minify-js']));
 
 // Compiles the JS and SASS as a one off for "production/live" purposes
-gulp.task('live', gulp.series(['sass', 'minify-css', 'minify-js']));
+gulp.task(
+  'live',
+  gulp.series(['sass', 'minify-css', 'autoprefixer', 'minify-js'])
+);
