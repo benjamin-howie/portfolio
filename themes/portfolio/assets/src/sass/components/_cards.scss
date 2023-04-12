@@ -41,8 +41,8 @@
 
   &-image {
     grid-area: featured-image;
+    display: flex;
     img {
-      height: 100%;
       object-fit: cover;
     }
   }
