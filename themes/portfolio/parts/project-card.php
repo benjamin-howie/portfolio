@@ -5,7 +5,7 @@ $classes = $args['classes'];
 ?>
 
 <a href="<?= the_permalink(); ?>" target="_blank"  class="project-card <?= $classes ?>" title="Go To <?= the_title() ?> Project Page">
-  <figure class="project-card-image">
+  <figure class="project-card-image image-load">
   <?= get_the_post_thumbnail(get_the_ID())?>
   </figure>
   <div class="project-card-header">

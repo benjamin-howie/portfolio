@@ -71,6 +71,12 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(document).ready(function ($) {
+  $('.image-load img').on('load', function (e) {
+    $(this).parent().addClass('loaded');
+  });
+});
+
+jQuery(document).ready(function ($) {
   // Simple Parallax effect
   let speed = 0.35;
   $(document).on('scroll', function () {

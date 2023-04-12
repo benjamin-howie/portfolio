@@ -141,3 +141,33 @@
     opacity: 1;
   }
 }
+
+.image-load {
+  // Shows wallpaper of spinners initially. When image is fully loaded, hides the loaders.
+  // This is handled in the image-load.js file.
+  position: relative;
+  &::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    background-image: url('../images/icons/loading.gif');
+    background-color: $white;
+    transition: opacity 0.2s;
+  }
+  &.loaded {
+    &::after {
+      opacity: 0;
+    }
+    img {
+      opacity: 1;
+    }
+  }
+  img {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+}

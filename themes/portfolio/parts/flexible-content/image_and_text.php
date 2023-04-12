@@ -23,7 +23,7 @@ $colour_shift = get_sub_field('colour_shift') ? 'colour-shift' : '';
       $image_src = wp_get_attachment_image( $image_id, 'large' );
       
     ?>
-      <figure class="image">
+      <figure class="image image-load">
         <?= $image_src ?>
       </figure>
     <?php endif; ?>

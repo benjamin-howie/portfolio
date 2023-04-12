@@ -15,6 +15,7 @@
     }
     .image {
       display: flex;
+
       img {
         width: 100%;
         @include responsiveMin($tablet-m) {
