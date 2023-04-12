@@ -127,10 +127,12 @@
   &-bg-video {
     z-index: -1;
     @include fullAbsolute();
-    video,
     img {
       height: 100%;
       width: 100%;
+    }
+    video,
+    img {
       object-fit: cover;
     }
   }
