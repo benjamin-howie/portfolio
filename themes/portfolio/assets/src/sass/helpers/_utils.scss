@@ -99,21 +99,27 @@
 }
 
 .animate-into-view {
-  overflow-y: hidden;
-  transform: translateY(2rem);
-  opacity: 0;
-  transition: transform 0.7s ease-in-out, opacity 0.8s ease-in-out;
-  &.in-view {
-    transform: translateY(0%);
-    opacity: 1;
+  @include responsiveMin($tablet-m) {
+    overflow-y: hidden;
+    transform: translateY(2rem);
+    opacity: 0;
+    transition: transform 0.7s ease-in-out, opacity 0.8s ease-in-out;
+    &.in-view {
+      transform: translateY(0%);
+      opacity: 1;
+    }
   }
 }
 
 .fade-in-on-load {
-  animation: 1s ease-out 0s 1 fadeIn;
+  @include responsiveMin($tablet-m) {
+    animation: 1s ease-out 0s 1 fadeIn;
+  }
 }
 .scale-down-on-load {
-  animation: 1s ease-in-out 0s 1 scaleDown;
+  @include responsiveMin($tablet-m) {
+    animation: 1s ease-in-out 0s 1 scaleDown;
+  }
 }
 @keyframes fadeIn {
   0% {
