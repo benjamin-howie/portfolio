@@ -1,25 +1,28 @@
 .image-and-text {
   &-wrapper {
     display: flex;
-    gap: 6rem;
     flex-direction: column;
-    justify-content: center;
     @include responsiveMin($tablet-m) {
       flex-direction: row;
+      & > * + * {
+        margin-left: 6rem;
+      }
       &.image-right {
         flex-direction: row-reverse;
+        & > * + * {
+          margin-right: 6rem;
+        }
       }
       & > * {
         flex: 50%;
       }
     }
     .image {
-      display: flex;
-
-      img {
-        object-fit: cover;
-        object-position: center;
+      margin-bottom: 4rem;
+      @include responsiveMin($tablet-m) {
+        margin-bottom: 0;
       }
+      align-self: center;
       & + .content {
         text-align: left;
       }

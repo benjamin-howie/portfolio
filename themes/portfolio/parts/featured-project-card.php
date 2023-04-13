@@ -6,8 +6,8 @@ $classes = $args['classes'];
 ?>
 
 <div class="featured-project-card <?= $classes ?>">
-  <a href="<?= get_the_permalink($featured_project->ID); ?>">
-  <figure class="featured-project-card-image image-load">
+  <a class="featured-project-card-image" href="<?= get_the_permalink($featured_project->ID); ?>">
+  <figure class="image-load">
   <?= get_the_post_thumbnail($featured_project->ID)?>
   </figure>
   </a>

@@ -20,8 +20,10 @@
     }
     &.header-desktop-menu .menu {
       display: flex;
-      justify-content: end;
-      gap: 4rem;
+      justify-content: flex-end;
+      & > * + * {
+        margin-right: 4rem;
+      }
     }
     &.header-mobile-menu {
       position: absolute;

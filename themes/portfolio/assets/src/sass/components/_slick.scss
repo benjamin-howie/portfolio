@@ -4,7 +4,9 @@
 }
 .slick-track {
   display: flex !important;
-  gap: 2rem;
+  & > * + * {
+    margin-right: 2rem;
+  }
 }
 .slick-autoplay-toggle-button,
 .slick-prev,
