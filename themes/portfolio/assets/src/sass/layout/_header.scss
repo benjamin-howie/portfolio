@@ -21,7 +21,7 @@
     &.header-desktop-menu .menu {
       display: flex;
       justify-content: flex-end;
-      & > * + * {
+      & > * {
         margin-right: 4rem;
       }
     }
@@ -43,7 +43,9 @@
       .menu {
         display: flex;
         flex-direction: column;
-        gap: 3.2rem;
+        & > * {
+          margin-bottom: 2rem;
+        }
         .menu-item a {
           font-weight: 900;
           font-size: 3.2rem;

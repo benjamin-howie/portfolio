@@ -1,10 +1,13 @@
 .connect-banner {
   &-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 1.6rem;
-    justify-items: center;
-    align-items: center;
+    @include responsiveMin($tablet-m) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      align-items: center;
+    }
   }
   &-heading {
     text-transform: capitalize;
